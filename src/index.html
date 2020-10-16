@@ -3,12 +3,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Stencil Skeleton</title>
 
     <script type="module" src="/build/skeleton.esm.js"></script>
     <script nomodule src="/build/skeleton.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <div>
+      <div class="skeletons-defaults">
+        <nb-skeleton></nb-skeleton>
+      </div>
+      <div class="skeletons-animation-no-animation">
+        <nb-skeleton animation="false"></nb-skeleton>
+      </div>
+      <div class="skeletons-animation-pulse">
+        <nb-skeleton animation="pulse"></nb-skeleton>
+      </div>
+      <div class="skeletons-animation-progress">
+        <nb-skeleton animation="progress"></nb-skeleton>
+      </div>
+      <div class="skeletons-animation-progress-dark">
+        <nb-skeleton animation="progress-dark"></nb-skeleton>
+      </div>
+      <div class="skeletons-animation-invalid-option">
+        <nb-skeleton animation="invalid-option"></nb-skeleton>
+      </div>
+      <div class="skeletons-with-count">
+        <nb-skeleton count="2"></nb-skeleton>
+      </div>
+      <div class="skeletons-appearance-circle">
+        <nb-skeleton appearance="circle"> </nb-skeleton>
+      </div>
+      <div class="skeletons-with-theming">
+        <nb-skeleton custom-styles='{"height":"200px", "width": "200px"}' appearance="circle"></nb-skeleton>
+      </div>
+    </div>
   </body>
 </html>

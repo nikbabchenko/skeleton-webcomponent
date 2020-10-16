@@ -6,56 +6,88 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface NbSkeleton {
         /**
-          * The first name
+          * Animation type
+          * @type {('progress' | 'progress-dark' | 'pulse' | 'false')}
+          * @memberof Skeleton
          */
-        "first": string;
+        "animation": 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
-          * The last name
+          * Appearance of the skeleton - circle or row
+          * @type {('circle' | '')}
+          * @memberof Skeleton
          */
-        "last": string;
+        "appearance": 'circle' | '';
         /**
-          * The middle name
+          * Number of rows of current skeleton type
+          * @memberof Skeleton
          */
-        "middle": string;
+        "count": number;
+        /**
+          * Custom css styles (width/height etc.)
+          * @type {({[k: string]: string} | string)}
+          * @memberof Skeleton
+         */
+        "customStyles": {[k: string]: string} | string;
+        /**
+          * Whether to show warnings for the wrong animation type/custom styles
+          * @memberof Skeleton
+         */
+        "showWarnings": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLNbSkeletonElement extends Components.NbSkeleton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLNbSkeletonElement: {
+        prototype: HTMLNbSkeletonElement;
+        new (): HTMLNbSkeletonElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "nb-skeleton": HTMLNbSkeletonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface NbSkeleton {
         /**
-          * The first name
+          * Animation type
+          * @type {('progress' | 'progress-dark' | 'pulse' | 'false')}
+          * @memberof Skeleton
          */
-        "first"?: string;
+        "animation"?: 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
-          * The last name
+          * Appearance of the skeleton - circle or row
+          * @type {('circle' | '')}
+          * @memberof Skeleton
          */
-        "last"?: string;
+        "appearance"?: 'circle' | '';
         /**
-          * The middle name
+          * Number of rows of current skeleton type
+          * @memberof Skeleton
          */
-        "middle"?: string;
+        "count"?: number;
+        /**
+          * Custom css styles (width/height etc.)
+          * @type {({[k: string]: string} | string)}
+          * @memberof Skeleton
+         */
+        "customStyles"?: {[k: string]: string} | string;
+        /**
+          * Whether to show warnings for the wrong animation type/custom styles
+          * @memberof Skeleton
+         */
+        "showWarnings"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "nb-skeleton": NbSkeleton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "nb-skeleton": LocalJSX.NbSkeleton & JSXBase.HTMLAttributes<HTMLNbSkeletonElement>;
         }
     }
 }
