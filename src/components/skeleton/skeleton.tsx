@@ -6,6 +6,7 @@ import { ALLOWED_ANIMATIONS } from './skeleton.constants';
   tag: 'nb-skeleton',
   styleUrl: 'skeleton.scss',
   shadow: false,
+  scoped: true
 })
 export class Skeleton {
   /**
@@ -66,7 +67,6 @@ export class Skeleton {
     if (this.customStyles && typeof(this.customStyles) === 'string') {
       try {
         this.customStyles = JSON.parse(this.customStyles);
-        console.log(this.customStyles);
       } catch (error) {
         if (this.showWarnings) {
           console.warn(`can't parse styles`, this.customStyles);
