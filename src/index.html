@@ -9,7 +9,13 @@
     <script nomodule src="/build/skeleton-webcomponent.js"></script>
   </head>
   <body>
-    <div>
+    <style>
+      .preview-container {
+        max-width: 400px;
+        width: 100%;
+      }
+    </style>
+    <div class="preview-container">
       <div class="skeletons-defaults">
         <nb-skeleton></nb-skeleton>
       </div>
@@ -35,7 +41,15 @@
         <nb-skeleton appearance="circle"> </nb-skeleton>
       </div>
       <div class="skeletons-with-theming">
-        <nb-skeleton custom-styles='{"height":"200px", "width": "200px"}' appearance="circle"></nb-skeleton>
+        <style>
+          .custom-skeleton {
+            --skeleton-width: 100px;
+            --skeleton-height: 100px;
+            --skeleton-background: #cccccc;
+            --skeleton-border-radius: 20px;
+          }
+        </style>
+        <nb-skeleton class="custom-skeleton" custom-styles='{"box-shadow":"0 2px 4px #ccc"}' appearance="circle"></nb-skeleton>
       </div>
     </div>
   </body>
