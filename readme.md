@@ -19,6 +19,7 @@ Webcomponent to make beautiful, animated loading skeletons in any web app - pure
 -- [#Smashing Magazine - Implementing Skeleton Screens In React ](https://www.smashingmagazine.com/2020/04/skeleton-screens-react/)
 
 ## Demo
+Will be done
 
 ### Install
 
