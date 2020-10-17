@@ -25,11 +25,11 @@ export namespace Components {
          */
         "count": number;
         /**
-          * Custom css styles (width/height etc.)
+          * Custom css styles (background/margins/width/height etc.)
           * @type {({[k: string]: string} | string)}
           * @memberof Skeleton
          */
-        "customStyles": {[k: string]: string} | string;
+        "customStyles": { [k: string]: string } | string;
         /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton
@@ -68,11 +68,11 @@ declare namespace LocalJSX {
          */
         "count"?: number;
         /**
-          * Custom css styles (width/height etc.)
+          * Custom css styles (background/margins/width/height etc.)
           * @type {({[k: string]: string} | string)}
           * @memberof Skeleton
          */
-        "customStyles"?: {[k: string]: string} | string;
+        "customStyles"?: { [k: string]: string } | string;
         /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton

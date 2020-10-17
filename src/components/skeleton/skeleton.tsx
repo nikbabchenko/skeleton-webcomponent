@@ -6,7 +6,7 @@ import { ALLOWED_ANIMATIONS } from './skeleton.constants';
   tag: 'nb-skeleton',
   styleUrl: 'skeleton.scss',
   shadow: false,
-  scoped: true
+  scoped: true,
 })
 export class Skeleton {
   /**
@@ -36,12 +36,12 @@ export class Skeleton {
   animation: 'progress' | 'progress-dark' | 'pulse' | 'false' = 'progress';
 
   /**
-   * Custom css styles (width/height etc.)
+   * Custom css styles (background/margins/width/height etc.)
    *
    * @type {({[k: string]: string} | string)}
    * @memberof Skeleton
    */
-  @Prop() customStyles: {[k: string]: string} | string = {};
+  @Prop() customStyles: { [k: string]: string } | string = {};
 
   /**
    * Whether to show warnings for the wrong animation type/custom styles
@@ -64,7 +64,7 @@ export class Skeleton {
       this.animation = 'progress';
     }
 
-    if (this.customStyles && typeof(this.customStyles) === 'string') {
+    if (this.customStyles && typeof this.customStyles === 'string') {
       try {
         this.customStyles = JSON.parse(this.customStyles);
       } catch (error) {
@@ -75,6 +75,9 @@ export class Skeleton {
     }
   }
 
+  get style() {
+    return typeof this.customStyles === 'object' ? this.customStyles : {};
+  }
 
   render() {
     return this.items.map((_, index) => {
@@ -96,9 +99,7 @@ export class Skeleton {
           aria-valuetext="Loading..."
           role="progressbar"
           tabindex="0"
-          style={typeof this.customStyles === 'object' ? this.customStyles : {}}
-
-          // TODO: add theme prop
+          style={this.style}
         ></span>
       );
     });
