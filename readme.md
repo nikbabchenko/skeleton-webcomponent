@@ -14,7 +14,7 @@
 
 -- [#Smashing Magazine - Implementing Skeleton Screens In React ](https://www.smashingmagazine.com/2020/04/skeleton-screens-react/)
 
-![enter image description here]('./docs-assets/loader-example.gif')
+![In Action](https://skeleton-webcomponent-loader.web.app/images/loader-example.gif)
 
 ## Demos
 [Skeleton Loader Home Page](https://skeleton-webcomponent-loader.web.app/)
