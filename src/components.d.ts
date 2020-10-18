@@ -14,12 +14,6 @@ export namespace Components {
          */
         "animation": 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
-          * Appearance of the skeleton - circle or row
-          * @type {('circle' | '')}
-          * @memberof Skeleton
-         */
-        "appearance": 'circle' | '';
-        /**
           * Number of rows of current skeleton type
           * @memberof Skeleton
          */
@@ -31,10 +25,28 @@ export namespace Components {
          */
         "customStyles": { [k: string]: string } | string;
         /**
+          * Height of the skeleton ex. 100px, 100%, auto etc.
+          * @type {string}
+          * @memberof Skeleton
+         */
+        "height": string;
+        /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton
          */
         "showWarnings": boolean;
+        /**
+          * Variant of the skeleton - circle or row
+          * @type {('circle' | '')}
+          * @memberof Skeleton
+         */
+        "variant": 'circle' | 'rect' | 'text';
+        /**
+          * Width of the skeleton ex. 100px, 100%, auto etc.
+          * @type {string}
+          * @memberof Skeleton
+         */
+        "width": string;
     }
 }
 declare global {
@@ -57,12 +69,6 @@ declare namespace LocalJSX {
          */
         "animation"?: 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
-          * Appearance of the skeleton - circle or row
-          * @type {('circle' | '')}
-          * @memberof Skeleton
-         */
-        "appearance"?: 'circle' | '';
-        /**
           * Number of rows of current skeleton type
           * @memberof Skeleton
          */
@@ -74,10 +80,28 @@ declare namespace LocalJSX {
          */
         "customStyles"?: { [k: string]: string } | string;
         /**
+          * Height of the skeleton ex. 100px, 100%, auto etc.
+          * @type {string}
+          * @memberof Skeleton
+         */
+        "height"?: string;
+        /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton
          */
         "showWarnings"?: boolean;
+        /**
+          * Variant of the skeleton - circle or row
+          * @type {('circle' | '')}
+          * @memberof Skeleton
+         */
+        "variant"?: 'circle' | 'rect' | 'text';
+        /**
+          * Width of the skeleton ex. 100px, 100%, auto etc.
+          * @type {string}
+          * @memberof Skeleton
+         */
+        "width"?: string;
     }
     interface IntrinsicElements {
         "nb-skeleton": NbSkeleton;

@@ -1,8 +1,12 @@
 import { Config } from '@stencil/core';
-import {sass} from '@stencil/sass';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'skeleton-webcomponent',
+  buildEs5: 'prod',
+  extras: {
+    cssVarsShim: true,
+  },
   outputTargets: [
     {
       type: 'dist',

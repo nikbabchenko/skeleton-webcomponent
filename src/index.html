@@ -4,12 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Skeleton</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script type="module" src="/build/skeleton-webcomponent.esm.js"></script>
     <script nomodule src="/build/skeleton-webcomponent.js"></script>
   </head>
   <body>
+    <h1>Skeleton Loader</h1>
     <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+
       .preview-container {
         max-width: 400px;
         width: 100%;
@@ -17,30 +22,39 @@
     </style>
     <div class="preview-container">
       <div class="skeletons-defaults">
-        <nb-skeleton></nb-skeleton>
+        <h2>Default</h2>
+        <nb-skeleton></nb-skeleton>     
       </div>
+      <div class="skeletons-appearance-circle">
+        <h2>Default circle</h2>
+        <nb-skeleton variant="circle"> </nb-skeleton>
+      </div> 
+      <div class="skeletons-appearance-circle">
+        <h2>Default rect</h2>
+        <nb-skeleton variant="rect"> </nb-skeleton>
+      </div>       
+      <div class="skeletons-with-count">
+        <h2>Default 4 rows</h2>
+        <nb-skeleton count="2"></nb-skeleton>
+      </div>           
       <div class="skeletons-animation-no-animation">
+        <h2>Without animation</h2>
         <nb-skeleton animation="false"></nb-skeleton>
       </div>
       <div class="skeletons-animation-pulse">
+        <h2>Pulse animation</h2>
         <nb-skeleton animation="pulse"></nb-skeleton>
       </div>
       <div class="skeletons-animation-progress">
+        <h2>Progress animation</h2>
         <nb-skeleton animation="progress"></nb-skeleton>
       </div>
       <div class="skeletons-animation-progress-dark">
+        <h2>Progress dark animation</h2>
         <nb-skeleton animation="progress-dark"></nb-skeleton>
       </div>
-      <div class="skeletons-animation-invalid-option">
-        <nb-skeleton animation="invalid-option"></nb-skeleton>
-      </div>
-      <div class="skeletons-with-count">
-        <nb-skeleton count="2"></nb-skeleton>
-      </div>
-      <div class="skeletons-appearance-circle">
-        <nb-skeleton appearance="circle"> </nb-skeleton>
-      </div>
       <div class="skeletons-with-theming">
+        <h2>Custom styles</h2>
         <style>
           .custom-skeleton {
             --skeleton-width: 100px;
@@ -50,6 +64,14 @@
           }
         </style>
         <nb-skeleton class="custom-skeleton" custom-styles='{"box-shadow":"0 2px 4px #ccc"}' appearance="circle"></nb-skeleton>
+      </div>
+      <div>
+        <h2>Custom width</h2>
+        <nb-skeleton width="500px"></nb-skeleton>
+      </div>
+      <div>
+        <h2>Custom height</h2>
+        <nb-skeleton height="80px"></nb-skeleton>
       </div>
     </div>
   </body>
