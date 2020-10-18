@@ -34,11 +34,10 @@
 		border-radius: var(--skeleton-border-radius, 50%);
 	}
 
-	/**
-  * Added only when `animation` attribute is `progress`
-  * at component level. So that we can load the
-  * animations only if needed
-  */
+	&.rect {
+		border-radius: var(--skeleton-border-radius, 0px);
+	}
+
 	&.progress,
 	&.progress-dark {
 		animation: progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -63,11 +62,6 @@
 		);
 	}
 
- /**
-  * Added only when `animation` attribute is `pulse`
-  * at component level. So that we can load the
-  * animations only if needed
-  */
 	&.pulse {
 		animation: pulse 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 		animation-delay: 0.5s;

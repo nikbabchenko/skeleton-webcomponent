@@ -18,13 +18,32 @@ export class Skeleton {
   count = 1;
 
   /**
-   * Appearance of the skeleton - circle or row
+   * Variant of the skeleton - circle or row
    *
    * @type {('circle' | '')}
    * @memberof Skeleton
    */
   @Prop()
-  appearance: 'circle' | '' = '';
+  variant: 'circle' | 'rect' | 'text' = 'text';
+
+  /**
+   * Width of the skeleton ex. 100px, 100%, auto etc.
+   *
+   *
+   * @type {string}
+   * @memberof Skeleton
+   */
+  @Prop()
+  width: string = null;
+
+  /**
+   * Height of the skeleton ex. 100px, 100%, auto etc.
+   *
+   * @type {string}
+   * @memberof Skeleton
+   */
+  @Prop()
+  height: string = null;
 
   /**
    * Animation type
@@ -53,6 +72,14 @@ export class Skeleton {
   items: number[] = [];
 
   componentWillLoad() {
+    this.init();
+  }
+
+  componentWillUpdate() {
+    this.init();
+  }
+
+  init() {
     this.items.length = this.count;
     this.items.fill(1);
 
@@ -76,7 +103,25 @@ export class Skeleton {
   }
 
   get style() {
-    return typeof this.customStyles === 'object' ? this.customStyles : {};
+    let dimenssionsStyles: {
+      width?: string,
+      height?: string
+    } = {
+      width: null,
+      height: null
+    };
+    
+    if (this.width) {
+      dimenssionsStyles.width = this.width;
+    }
+
+    if (this.height) {
+      dimenssionsStyles.height = this.height;
+    }
+
+    const styles = typeof this.customStyles === 'object' ? this.customStyles : {};
+
+    return {...dimenssionsStyles, ...styles};
   }
 
   render() {
@@ -87,7 +132,8 @@ export class Skeleton {
           class={cn([
             'skeleton',
             {
-              'circle': this.appearance === 'circle',
+              'circle': this.variant === 'circle',
+              'rect': this.variant === 'rect',
               'progress': this.animation === 'progress',
               'progress-dark': this.animation === 'progress-dark',
               'pulse': this.animation === 'pulse',

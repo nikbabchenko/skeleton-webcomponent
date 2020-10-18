@@ -10,10 +10,12 @@
 | Property       | Attribute       | Description                                                         | Type                                                  | Default      |
 | -------------- | --------------- | ------------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
 | `animation`    | `animation`     | Animation type                                                      | `"false" \| "progress" \| "progress-dark" \| "pulse"` | `'progress'` |
-| `appearance`   | `appearance`    | Appearance of the skeleton - circle or row                          | `"" \| "circle"`                                      | `''`         |
 | `count`        | `count`         | Number of rows of current skeleton type                             | `number`                                              | `1`          |
 | `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)            | `string \| { [k: string]: string; }`                  | `{}`         |
+| `height`       | `height`        | Height of the skeleton ex. 100px, 100%, auto etc.                   | `string`                                              | `null`       |
 | `showWarnings` | `show-warnings` | Whether to show warnings for the wrong animation type/custom styles | `boolean`                                             | `true`       |
+| `variant`      | `variant`       | Variant of the skeleton - circle or row                             | `"circle" \| "rect" \| "text"`                        | `'text'`     |
+| `width`        | `width`         | Width of the skeleton ex. 100px, 100%, auto etc.                    | `string`                                              | `null`       |
 
 
 ## CSS Custom Properties
