@@ -30,7 +30,7 @@
 	&.circle {
 		width: var(--skeleton-width, 40px);
 		height: var(--skeleton-height, 40px);
-		margin: var(--skeleton-margin-bottom, 5px);
+		margin-bottom: var(--skeleton-margin-bottom, 5px);
 		border-radius: var(--skeleton-border-radius, 50%);
 	}
 
