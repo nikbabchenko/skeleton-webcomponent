@@ -3,7 +3,7 @@
 
 # Skeleton Loader Webcomponent
 
-**Skeleton Loader** is a webcomponent to make beautiful, animated loading skeletons in any web app - pure html/css/js or Angular/React.
+**Skeleton Loader** is a very lightweight (**5.2kb** gzip / **10kb** without compression) webcomponent to make beautiful, animated loading skeletons in any web app - pure html/css/js or Angular/React.
 
 > Spinners and loaders have traditionally been the way to tell users
 > that content is going to take a while to load. While this approach is
@@ -13,20 +13,19 @@
 > loading-time frustration...
 
 -- [#Smashing Magazine - Implementing Skeleton Screens In React ](https://www.smashingmagazine.com/2020/04/skeleton-screens-react/)
-
-![In Action](https://skeleton-webcomponent-loader.web.app/images/loader-example.gif)
-
 ## Demos
 [Skeleton Loader Home Page](https://skeleton-webcomponent-loader.web.app/)
+![In Action](https://skeleton-webcomponent-loader.web.app/images/loader-example.gif)
 
+![Variants](https://skeleton-webcomponent-loader.web.app/images/loader-variants.gif)
 ### Install
 You can get it on NPM installing  `skeleton-webcomponent-loader`   as a project dependency or via UNPKG
 
     npm i skeleton-webcomponent-loader
     
 #### Script tag via UNPKG (global npm delivery network)
-    <script  type="module"  src="https://unpkg.com/skeleton-webcomponent-loader@0.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
-    <script  type="nomodule"  src="https://unpkg.com/skeleton-webcomponent-loader@0.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.js"></script>
+    <script  type="module"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.0/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
+    <script  type="nomodule"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.0/dist/skeleton-webcomponent/skeleton-webcomponent.js"></script>
 
 #### Script tag via npm
     <script  type="module"  src="./node_modules/skeleton-webcomponent-loader/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
@@ -64,12 +63,12 @@ Pass properties and see it in action
 
 | Property       | Attribute       | Description                                                         | Type                                                  | Default      |
 | -------------- | --------------- | ------------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
-| `animation`    | `animation`     | Animation type                                                      | `"false" \| "progress" \| "progress-dark" \| "pulse"` | `'progress'` |
+| `animation`    | `animation`     | Animation type                                                      | `"false" | "progress" | "progress-dark" | "pulse"` | `'progress'` |
 | `count`        | `count`         | Number of rows of current skeleton type                             | `number`                                              | `1`          |
-| `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)            | `string \| { [k: string]: string; }`                  | `{}`         |
+| `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)            | `string | { [k: string]: string; }`                  | `{}`         |
 | `height`       | `height`        | Height of the skeleton ex. 100px, 100%, auto etc.                   | `string`                                              | `null`       |
 | `showWarnings` | `show-warnings` | Whether to show warnings for the wrong animation type/custom styles | `boolean`                                             | `true`       |
-| `variant`      | `variant`       | Variant of the skeleton - circle or row                             | `"circle" \| "rect" \| "text"`                        | `'text'`     |
+| `variant`      | `variant`       | Variant of the skeleton - circle or row                             | `"circle" | "rect" | "text"`                        | `'text'`     |
 | `width`        | `width`         | Width of the skeleton ex. 100px, 100%, auto etc.                    | `string`                                              | `null`       |
 
 
@@ -83,7 +82,5 @@ Pass properties and see it in action
 | `--skeleton-margin-bottom` | Skeleton margin-bottom: Default: 10px for the row, 5px for the circle |
 | `--skeleton-width`         | Skeleton width: Default: 100% for the row, 40px for the circle        |
 
-
-----------------------------------------------  |
 
 Inspired by [ngx-skeleton-loader](https://github.com/willmendesneto/ngx-skeleton-loader)
