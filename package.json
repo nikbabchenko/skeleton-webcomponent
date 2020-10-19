@@ -1,6 +1,6 @@
 {
   "name": "skeleton-webcomponent-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Skeleton loader webcomponent developed in stencil.js",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",

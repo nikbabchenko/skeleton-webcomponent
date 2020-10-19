@@ -14,9 +14,11 @@
 > loading-time frustration...
 
 -- [#Smashing Magazine - Implementing Skeleton Screens In React ](https://www.smashingmagazine.com/2020/04/skeleton-screens-react/)
+
+![In Action](https://skeleton-webcomponent-loader.web.app/images/loader-example.gif)
+
 ## Demos
 [Skeleton Loader Home Page](https://skeleton-webcomponent-loader.web.app/)
-![In Action](https://skeleton-webcomponent-loader.web.app/images/loader-example.gif)
 
 ### Install
 You can get it on NPM installing  `skeleton-webcomponent-loader`   as a project dependency or via UNPKG
@@ -24,8 +26,8 @@ You can get it on NPM installing  `skeleton-webcomponent-loader`   as a project 
     npm i skeleton-webcomponent-loader
     
 #### Script tag via UNPKG (global npm delivery network)
-    <script  type="module"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.0/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
-    <script  type="nomodule"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.0/dist/skeleton-webcomponent/skeleton-webcomponent.js"></script>
+    <script  type="module"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
+    <script  type="nomodule"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.js"></script>
 
 #### Script tag via npm
     <script  type="module"  src="./node_modules/skeleton-webcomponent-loader/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
