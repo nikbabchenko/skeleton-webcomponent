@@ -23,7 +23,7 @@ export namespace Components {
           * @type {({[k: string]: string} | string)}
           * @memberof Skeleton
          */
-        "customStyles": { [k: string]: string } | string;
+        "customStyles": { [key: string]: string } | string;
         /**
           * Height of the skeleton ex. 100px, 100%, auto etc.
           * @type {string}
@@ -78,7 +78,7 @@ declare namespace LocalJSX {
           * @type {({[k: string]: string} | string)}
           * @memberof Skeleton
          */
-        "customStyles"?: { [k: string]: string } | string;
+        "customStyles"?: { [key: string]: string } | string;
         /**
           * Height of the skeleton ex. 100px, 100%, auto etc.
           * @type {string}

@@ -1,5 +1,4 @@
 import { Component, h, Prop } from '@stencil/core';
-import cn from 'classnames';
 import { ALLOWED_ANIMATIONS } from './skeleton.constants';
 
 @Component({
@@ -60,7 +59,7 @@ export class Skeleton {
    * @type {({[k: string]: string} | string)}
    * @memberof Skeleton
    */
-  @Prop() customStyles: { [k: string]: string } | string = {};
+  @Prop() customStyles: { [key: string]: string } | string = {};
 
   /**
    * Whether to show warnings for the wrong animation type/custom styles
@@ -129,16 +128,15 @@ export class Skeleton {
       return (
         <span
           key={index}
-          class={cn([
-            'skeleton',
-            {
-              'circle': this.variant === 'circle',
-              'rect': this.variant === 'rect',
-              'progress': this.animation === 'progress',
+          class={{
+              circle: this.variant === 'circle',
+              rect: this.variant === 'rect',
+              progress: this.animation === 'progress',
               'progress-dark': this.animation === 'progress-dark',
-              'pulse': this.animation === 'pulse',
-            },
-          ])}
+              pulse: this.animation === 'pulse',
+              skeleton: true
+            }
+          }
           aria-busy="true"
           aria-valuemin="0"
           aria-valuemax="100"
