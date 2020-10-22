@@ -4,7 +4,7 @@
 # Skeleton Loader Webcomponent
 ![Variants](https://skeleton-webcomponent-loader.web.app/images/variants.gif)
 
-**Skeleton Loader** is a very lightweight (**5.2kb** gzip / **10kb** without compression) webcomponent to make beautiful, animated loading skeletons in any web app - pure html/css/js or Angular/React.
+**Skeleton Loader** is a very lightweight (less than **5kb** gzip) webcomponent to make beautiful, animated loading skeletons in any web app - pure html/css/js or Angular/React.
 
 > Spinners and loaders have traditionally been the way to tell users
 > that content is going to take a while to load. While this approach is
@@ -26,8 +26,8 @@ You can get it on NPM installing  `skeleton-webcomponent-loader`   as a project 
     npm i skeleton-webcomponent-loader
     
 #### Script tag via UNPKG (global npm delivery network)
-    <script  type="module"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
-    <script  type="nomodule"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.3/dist/skeleton-webcomponent/skeleton-webcomponent.js"></script>
+    <script  type="module"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.5/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
+    <script  type="nomodule"  src="https://unpkg.com/skeleton-webcomponent-loader@1.0.5/dist/skeleton-webcomponent/skeleton-webcomponent.js"></script>
 
 #### Script tag via npm
     <script  type="module"  src="./node_modules/skeleton-webcomponent-loader/dist/skeleton-webcomponent/skeleton-webcomponent.esm.js"></script>
@@ -67,7 +67,7 @@ Pass properties and see it in action
 | -------------- | --------------- | ------------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
 | `animation`    | `animation`     | Animation type                                                      | `"false" | "progress" | "progress-dark" | "pulse"` | `'progress'` |
 | `count`        | `count`         | Number of rows of current skeleton type                             | `number`                                              | `1`          |
-| `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)            | `string | { [k: string]: string; }`                  | `{}`         |
+| `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)            | `string | { [key: string]: string; }`                  | `{}`         |
 | `height`       | `height`        | Height of the skeleton ex. 100px, 100%, auto etc.                   | `string`                                              | `null`       |
 | `showWarnings` | `show-warnings` | Whether to show warnings for the wrong animation type/custom styles | `boolean`                                             | `true`       |
 | `variant`      | `variant`       | Variant of the skeleton - circle or row                             | `"circle" | "rect" | "text"`                        | `'text'`     |
