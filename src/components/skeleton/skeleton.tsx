@@ -4,8 +4,7 @@ import { ALLOWED_ANIMATIONS } from './skeleton.constants';
 @Component({
   tag: 'nb-skeleton',
   styleUrl: 'skeleton.scss',
-  shadow: false,
-  scoped: true,
+  shadow: true,
 })
 export class Skeleton {
   /**
@@ -43,6 +42,15 @@ export class Skeleton {
    */
   @Prop()
   height: string = null;
+
+  /**
+   * MarginBottom of the skeleton ex. 10px, 0 etc.
+   *
+   * @type {string}
+   * @memberof Skeleton
+   */
+  @Prop()
+  marginBottom: string = null;  
 
   /**
    * Animation type
@@ -104,10 +112,12 @@ export class Skeleton {
   get style() {
     let dimenssionsStyles: {
       width?: string,
-      height?: string
+      height?: string,
+      marginBottom?: string,
     } = {
       width: null,
-      height: null
+      height: null,
+      marginBottom: null
     };
     
     if (this.width) {
@@ -116,6 +126,10 @@ export class Skeleton {
 
     if (this.height) {
       dimenssionsStyles.height = this.height;
+    }
+
+    if (this.marginBottom) {
+      dimenssionsStyles.marginBottom = this.marginBottom;
     }
 
     const styles = typeof this.customStyles === 'object' ? this.customStyles : {};
