@@ -13,6 +13,7 @@
 | `count`        | `count`         | Number of rows of current skeleton type                             | `number`                                              | `1`          |
 | `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)            | `string \| { [key: string]: string; }`                | `{}`         |
 | `height`       | `height`        | Height of the skeleton ex. 100px, 100%, auto etc.                   | `string`                                              | `null`       |
+| `marginBottom` | `margin-bottom` | MarginBottom of the skeleton ex. 10px, 0 etc.                       | `string`                                              | `null`       |
 | `showWarnings` | `show-warnings` | Whether to show warnings for the wrong animation type/custom styles | `boolean`                                             | `true`       |
 | `variant`      | `variant`       | Variant of the skeleton - circle or row                             | `"circle" \| "rect" \| "text"`                        | `'text'`     |
 | `width`        | `width`         | Width of the skeleton ex. 100px, 100%, auto etc.                    | `string`                                              | `null`       |

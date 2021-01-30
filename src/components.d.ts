@@ -31,6 +31,12 @@ export namespace Components {
          */
         "height": string;
         /**
+          * MarginBottom of the skeleton ex. 10px, 0 etc.
+          * @type {string}
+          * @memberof Skeleton
+         */
+        "marginBottom": string;
+        /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton
          */
@@ -85,6 +91,12 @@ declare namespace LocalJSX {
           * @memberof Skeleton
          */
         "height"?: string;
+        /**
+          * MarginBottom of the skeleton ex. 10px, 0 etc.
+          * @type {string}
+          * @memberof Skeleton
+         */
+        "marginBottom"?: string;
         /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton
