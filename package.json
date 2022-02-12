@@ -1,6 +1,6 @@
 {
   "name": "skeleton-webcomponent-loader",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "Skeleton loader webcomponent developed in stencil.js",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -33,8 +33,8 @@
     }
   },
   "dependencies": {
-    "@stencil/core": "^2.4.0",
-    "@stencil/sass": "^1.4.1"
+    "@stencil/core": "^2.13.0",
+    "@stencil/sass": "^1.5.2"
   },
   "license": "MIT",
   "devDependencies": {
