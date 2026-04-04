@@ -15,6 +15,20 @@ export namespace Components {
          */
         "animation": 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
+          * Wrapper element tag that carries ARIA attributes (e.g. div, span, section)
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'div'
+         */
+        "as": string;
+        /**
+          * Render rows directly in the host element and apply ARIA attributes to host
+          * @type {boolean}
+          * @memberof Skeleton
+          * @default false
+         */
+        "asChild": boolean;
+        /**
           * Number of rows of current skeleton type
           * @memberof Skeleton
           * @default 1
@@ -34,6 +48,13 @@ export namespace Components {
           * @default null
          */
         "height": string;
+        /**
+          * Accessible text announced by screen readers while content is loading
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'Loading...'
+         */
+        "label": string;
         /**
           * MarginBottom of the skeleton ex. 10px, 0 etc.
           * @type {string}
@@ -84,6 +105,20 @@ declare namespace LocalJSX {
          */
         "animation"?: 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
+          * Wrapper element tag that carries ARIA attributes (e.g. div, span, section)
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'div'
+         */
+        "as"?: string;
+        /**
+          * Render rows directly in the host element and apply ARIA attributes to host
+          * @type {boolean}
+          * @memberof Skeleton
+          * @default false
+         */
+        "asChild"?: boolean;
+        /**
           * Number of rows of current skeleton type
           * @memberof Skeleton
           * @default 1
@@ -103,6 +138,13 @@ declare namespace LocalJSX {
           * @default null
          */
         "height"?: string;
+        /**
+          * Accessible text announced by screen readers while content is loading
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'Loading...'
+         */
+        "label"?: string;
         /**
           * MarginBottom of the skeleton ex. 10px, 0 etc.
           * @type {string}
@@ -134,6 +176,9 @@ declare namespace LocalJSX {
 
     interface NbSkeletonAttributes {
         "count": number;
+        "label": string;
+        "as": string;
+        "asChild": boolean;
         "variant": 'circle' | 'rect' | 'text';
         "width": string;
         "height": string;

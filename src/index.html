@@ -73,6 +73,18 @@
         <h2>Custom height</h2>
         <nb-skeleton height="80px"></nb-skeleton>
       </div>
+      <div>
+        <h2>Custom aria label</h2>
+        <nb-skeleton label="Loading comments..."></nb-skeleton>
+      </div>
+      <div>
+        <h2>Custom wrapper tag (as="span")</h2>
+        <nb-skeleton as="span" label="Loading feed..."></nb-skeleton>
+      </div>
+      <div>
+        <h2>asChild with host ARIA and multiple rows</h2>
+        <nb-skeleton as-child="true" variant="text" count="3" label="Loading profile rows..."></nb-skeleton>
+      </div>
     </div>
   </body>
 </html>

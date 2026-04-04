@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 import { ALLOWED_ANIMATIONS } from './skeleton.constants';
 
 @Component({
@@ -14,6 +14,33 @@ export class Skeleton {
    */
   @Prop()
   count = 1;
+
+  /**
+   * Accessible text announced by screen readers while content is loading
+   *
+   * @type {string}
+   * @memberof Skeleton
+   */
+  @Prop()
+  label: string = 'Loading...';
+
+  /**
+   * Wrapper element tag that carries ARIA attributes (e.g. div, span, section)
+   *
+   * @type {string}
+   * @memberof Skeleton
+   */
+  @Prop()
+  as: string = 'div';
+
+  /**
+   * Render rows directly in the host element and apply ARIA attributes to host
+   *
+   * @type {boolean}
+   * @memberof Skeleton
+   */
+  @Prop()
+  asChild = false;
 
   /**
    * Variant of the skeleton - circle or row
@@ -77,6 +104,7 @@ export class Skeleton {
   @Prop() showWarnings = true;
 
   items: number[] = [];
+  parsedCustomStyles: { [key: string]: string } = {};
 
   componentWillLoad() {
     this.init();
@@ -89,6 +117,7 @@ export class Skeleton {
   init() {
     this.items.length = this.count;
     this.items.fill(1);
+    this.parsedCustomStyles = {};
 
     if (!ALLOWED_ANIMATIONS.includes(this.animation)) {
       if (this.showWarnings) {
@@ -100,12 +129,17 @@ export class Skeleton {
 
     if (this.customStyles && typeof this.customStyles === 'string') {
       try {
-        this.customStyles = JSON.parse(this.customStyles);
+        const parsed = JSON.parse(this.customStyles);
+        if (parsed && typeof parsed === 'object') {
+          this.parsedCustomStyles = parsed;
+        }
       } catch (error) {
         if (this.showWarnings) {
           console.warn(`can't parse styles`, this.customStyles);
         }
       }
+    } else if (this.customStyles && typeof this.customStyles === 'object') {
+      this.parsedCustomStyles = this.customStyles;
     }
   }
 
@@ -132,12 +166,37 @@ export class Skeleton {
       dimenssionsStyles.marginBottom = this.marginBottom;
     }
 
-    const styles = typeof this.customStyles === 'object' ? this.customStyles : {};
+    const styles = this.parsedCustomStyles;
 
     return {...dimenssionsStyles, ...styles};
   }
 
-  render() {
+  resolveWrapperTag() {
+    const tag = (this.as || '').trim().toLowerCase();
+
+    if (/^[a-z][a-z0-9-]*$/.test(tag)) {
+      return tag;
+    }
+
+    if (this.showWarnings) {
+      console.warn('`Skeleton` `as` prop must be a valid html tag name. Falling back to "div".');
+    }
+
+    return 'div';
+  }
+
+  get ariaProps() {
+    return {
+      'aria-busy': 'true',
+      'aria-label': this.label,
+      'aria-valuemin': '0',
+      'aria-valuemax': '100',
+      'aria-valuetext': this.label,
+      role: 'progressbar',
+    };
+  }
+
+  renderRows() {
     return this.items.map((_, index) => {
       return (
         <span
@@ -151,15 +210,24 @@ export class Skeleton {
               skeleton: true
             }
           }
-          aria-busy="true"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          aria-valuetext="Loading..."
-          role="progressbar"
-          tabindex="0"
+          aria-hidden="true"
           style={this.style}
         ></span>
       );
     });
+  }
+
+  render() {
+    if (this.asChild) {
+      return <Host {...this.ariaProps}>{this.renderRows()}</Host>;
+    }
+
+    const WrapperTag = this.resolveWrapperTag() as any;
+
+    return (
+      <Host>
+        <WrapperTag {...this.ariaProps}>{this.renderRows()}</WrapperTag>
+      </Host>
+    );
   }
 }
