@@ -21,6 +21,7 @@
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test.watch": "stencil test --spec --e2e --watchAll",
+    "test": "stencil test --spec --e2e",
     "generate": "stencil generate",
     "prepublish": "npm run build",
     "commit": "npx git-cz",
