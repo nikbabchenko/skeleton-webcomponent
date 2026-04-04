@@ -11,46 +11,75 @@ export namespace Components {
           * Animation type
           * @type {('progress' | 'progress-dark' | 'pulse' | 'false')}
           * @memberof Skeleton
+          * @default 'progress'
          */
         "animation": 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
+          * Wrapper element tag that carries ARIA attributes (e.g. div, span, section)
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'div'
+         */
+        "as": string;
+        /**
+          * Render rows directly in the host element and apply ARIA attributes to host
+          * @type {boolean}
+          * @memberof Skeleton
+          * @default false
+         */
+        "asChild": boolean;
+        /**
           * Number of rows of current skeleton type
           * @memberof Skeleton
+          * @default 1
          */
         "count": number;
         /**
           * Custom css styles (background/margins/width/height etc.)
           * @type {({[k: string]: string} | string)}
           * @memberof Skeleton
+          * @default {}
          */
         "customStyles": { [key: string]: string } | string;
         /**
           * Height of the skeleton ex. 100px, 100%, auto etc.
           * @type {string}
           * @memberof Skeleton
+          * @default null
          */
         "height": string;
+        /**
+          * Accessible text announced by screen readers while content is loading
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'Loading...'
+         */
+        "label": string;
         /**
           * MarginBottom of the skeleton ex. 10px, 0 etc.
           * @type {string}
           * @memberof Skeleton
+          * @default null
          */
         "marginBottom": string;
         /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton
+          * @default true
          */
         "showWarnings": boolean;
         /**
           * Variant of the skeleton - circle or row
           * @type {('circle' | '')}
           * @memberof Skeleton
+          * @default 'text'
          */
         "variant": 'circle' | 'rect' | 'text';
         /**
           * Width of the skeleton ex. 100px, 100%, auto etc.
           * @type {string}
           * @memberof Skeleton
+          * @default null
          */
         "width": string;
     }
@@ -72,58 +101,102 @@ declare namespace LocalJSX {
           * Animation type
           * @type {('progress' | 'progress-dark' | 'pulse' | 'false')}
           * @memberof Skeleton
+          * @default 'progress'
          */
         "animation"?: 'progress' | 'progress-dark' | 'pulse' | 'false';
         /**
+          * Wrapper element tag that carries ARIA attributes (e.g. div, span, section)
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'div'
+         */
+        "as"?: string;
+        /**
+          * Render rows directly in the host element and apply ARIA attributes to host
+          * @type {boolean}
+          * @memberof Skeleton
+          * @default false
+         */
+        "asChild"?: boolean;
+        /**
           * Number of rows of current skeleton type
           * @memberof Skeleton
+          * @default 1
          */
         "count"?: number;
         /**
           * Custom css styles (background/margins/width/height etc.)
           * @type {({[k: string]: string} | string)}
           * @memberof Skeleton
+          * @default {}
          */
         "customStyles"?: { [key: string]: string } | string;
         /**
           * Height of the skeleton ex. 100px, 100%, auto etc.
           * @type {string}
           * @memberof Skeleton
+          * @default null
          */
         "height"?: string;
+        /**
+          * Accessible text announced by screen readers while content is loading
+          * @type {string}
+          * @memberof Skeleton
+          * @default 'Loading...'
+         */
+        "label"?: string;
         /**
           * MarginBottom of the skeleton ex. 10px, 0 etc.
           * @type {string}
           * @memberof Skeleton
+          * @default null
          */
         "marginBottom"?: string;
         /**
           * Whether to show warnings for the wrong animation type/custom styles
           * @memberof Skeleton
+          * @default true
          */
         "showWarnings"?: boolean;
         /**
           * Variant of the skeleton - circle or row
           * @type {('circle' | '')}
           * @memberof Skeleton
+          * @default 'text'
          */
         "variant"?: 'circle' | 'rect' | 'text';
         /**
           * Width of the skeleton ex. 100px, 100%, auto etc.
           * @type {string}
           * @memberof Skeleton
+          * @default null
          */
         "width"?: string;
     }
+
+    interface NbSkeletonAttributes {
+        "count": number;
+        "label": string;
+        "as": string;
+        "asChild": boolean;
+        "variant": 'circle' | 'rect' | 'text';
+        "width": string;
+        "height": string;
+        "marginBottom": string;
+        "animation": 'progress' | 'progress-dark' | 'pulse' | 'false';
+        "customStyles": { [key: string]: string } | string;
+        "showWarnings": boolean;
+    }
+
     interface IntrinsicElements {
-        "nb-skeleton": NbSkeleton;
+        "nb-skeleton": Omit<NbSkeleton, keyof NbSkeletonAttributes> & { [K in keyof NbSkeleton & keyof NbSkeletonAttributes]?: NbSkeleton[K] } & { [K in keyof NbSkeleton & keyof NbSkeletonAttributes as `attr:${K}`]?: NbSkeletonAttributes[K] } & { [K in keyof NbSkeleton & keyof NbSkeletonAttributes as `prop:${K}`]?: NbSkeleton[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "nb-skeleton": LocalJSX.NbSkeleton & JSXBase.HTMLAttributes<HTMLNbSkeletonElement>;
+            "nb-skeleton": LocalJSX.IntrinsicElements["nb-skeleton"] & JSXBase.HTMLAttributes<HTMLNbSkeletonElement>;
         }
     }
 }

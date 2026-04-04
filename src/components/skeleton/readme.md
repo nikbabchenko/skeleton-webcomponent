@@ -7,16 +7,19 @@
 
 ## Properties
 
-| Property       | Attribute       | Description                                                         | Type                                                  | Default      |
-| -------------- | --------------- | ------------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
-| `animation`    | `animation`     | Animation type                                                      | `"false" \| "progress" \| "progress-dark" \| "pulse"` | `'progress'` |
-| `count`        | `count`         | Number of rows of current skeleton type                             | `number`                                              | `1`          |
-| `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)            | `string \| { [key: string]: string; }`                | `{}`         |
-| `height`       | `height`        | Height of the skeleton ex. 100px, 100%, auto etc.                   | `string`                                              | `null`       |
-| `marginBottom` | `margin-bottom` | MarginBottom of the skeleton ex. 10px, 0 etc.                       | `string`                                              | `null`       |
-| `showWarnings` | `show-warnings` | Whether to show warnings for the wrong animation type/custom styles | `boolean`                                             | `true`       |
-| `variant`      | `variant`       | Variant of the skeleton - circle or row                             | `"circle" \| "rect" \| "text"`                        | `'text'`     |
-| `width`        | `width`         | Width of the skeleton ex. 100px, 100%, auto etc.                    | `string`                                              | `null`       |
+| Property       | Attribute       | Description                                                                | Type                                                  | Default        |
+| -------------- | --------------- | -------------------------------------------------------------------------- | ----------------------------------------------------- | -------------- |
+| `animation`    | `animation`     | Animation type                                                             | `"false" \| "progress" \| "progress-dark" \| "pulse"` | `'progress'`   |
+| `as`           | `as`            | Wrapper element tag that carries ARIA attributes (e.g. div, span, section) | `string`                                              | `'div'`        |
+| `asChild`      | `as-child`      | Render rows directly in the host element and apply ARIA attributes to host | `boolean`                                             | `false`        |
+| `count`        | `count`         | Number of rows of current skeleton type                                    | `number`                                              | `1`            |
+| `customStyles` | `custom-styles` | Custom css styles (background/margins/width/height etc.)                   | `string \| { [key: string]: string; }`                | `{}`           |
+| `height`       | `height`        | Height of the skeleton ex. 100px, 100%, auto etc.                          | `string`                                              | `null`         |
+| `label`        | `label`         | Accessible text announced by screen readers while content is loading       | `string`                                              | `'Loading...'` |
+| `marginBottom` | `margin-bottom` | MarginBottom of the skeleton ex. 10px, 0 etc.                              | `string`                                              | `null`         |
+| `showWarnings` | `show-warnings` | Whether to show warnings for the wrong animation type/custom styles        | `boolean`                                             | `true`         |
+| `variant`      | `variant`       | Variant of the skeleton - circle or row                                    | `"circle" \| "rect" \| "text"`                        | `'text'`       |
+| `width`        | `width`         | Width of the skeleton ex. 100px, 100%, auto etc.                           | `string`                                              | `null`         |
 
 
 ## CSS Custom Properties
