@@ -32,20 +32,19 @@
     }
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0",
-    "@stencil/sass": "^1.5.2"
+    "@stencil/core": "^4.43.3",
+    "@stencil/sass": "^3.2.3"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.14",
-    "@types/puppeteer": "^3.0.1",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "^3.3.0",
     "jest": "^26.4.2",
     "jest-cli": "^26.4.2",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",
-    "puppeteer": "^5.2.1",
+    "puppeteer": "^24.7.1",
     "standard-version": "^9.0.0"
   },
   "repository": {
